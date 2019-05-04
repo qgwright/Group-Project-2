@@ -117,7 +117,9 @@ $exampleText.on("keyup", function() {
     console.log(response);
     $exampleList.empty();
     for(var i = 0; i < response.common.length; i++) {
-      $exampleList.append("<p>" + response.common[i].food_name + "</p>");
+      var food = response.common[i];
+      $exampleList.append("<p>" + food.food_name + "</p>");
+      $exampleList.append("<img src=\"" + food.photo.thumb + "\" width=100 height=100>");
     }
   });
 
