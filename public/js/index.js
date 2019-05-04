@@ -97,3 +97,28 @@ var handleDeleteBtnClick = function() {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+$exampleText.on("keyup", function() {
+  var userInput = $exampleText.val().trim();
+  var queryURL = "https://trackapi.nutritionix.com/v2/search/instant/?query=" + userInput;
+
+  var settings = {
+    "async": true,
+    //"crossDomain": true,
+    "url": queryURL,
+    "method": "GET",
+    "headers": {
+      "x-app-id": "84c632bf",
+      "x-app-key": "dd95b1d72a10fe94a348ca8846d2aba4"
+    }
+  }
+  
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+    $exampleList.empty();
+    for(var i = 0; i < response.common.length; i++) {
+      $exampleList.append("<p>" + response.common[i].food_name + "</p>");
+    }
+  });
+
+});
