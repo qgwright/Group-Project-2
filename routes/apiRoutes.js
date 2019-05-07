@@ -21,4 +21,15 @@ module.exports = function(app) {
       res.json(dbExample);
     });
   });
+
+
+  
+app.post("/homepage/submit", function(req, res){
+var submit = req.body.button;
+});
+
+ 
+app.post("/allocation/submit", function(req, res){
+  var submit = req.body.button;
+  });
 };
