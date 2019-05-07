@@ -1,0 +1,158 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+
+ /* body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+} */
+
+
+ .list-group-item {
+  line-height: 2.5;
+}
+
+
+input[type=range] + .thumb.active .value {
+  color: #fff;
+  margin-left: 2px;
+  margin-top: 2px;
+  font-size: 10px;
+}
+
+
+.range-field {
+  border: 1px solid #cdcdcd;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+.header {
+  color: #fff;
+  text-shadow: 1px 1px 2px #444;
+}
+
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+
+p {
+  line-height: 1.5rem;
+}
+
+
+.sidenav-trigger {
+  color: #26a69a;
+}
+
+
+.main {
+  margin-right: 500px; /* Same width as the sidebar + left position in px */
+}
+
+
+.parallax-container {
+  min-height: 180px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+
+
+.parallax-container .section {
+  width: 100%;
+}
+
+
+.over-under-row {
+  margin-bottom: 0;
+}
+
+
+.mobile-over-under {
+  background: #000;
+  color: #fff;
+}
+
+
+.sidebar {
+  width: 400px;
+  position: fixed;
+  z-index: 1;
+  top: 280px;
+  right: 100px;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+  padding: 15px;
+}
+
+
+@media screen and (min-width: 900px) {
+  .over-under-row {
+    display: none;
+  }
+}
+
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+  .sidebar {
+    display: none;
+  }
+  .over-under-row {
+    display: block;
+  }
+  .main {
+    margin-right: 25px;
+  }
+}
+
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+  .sidebar {
+    display: none;
+  }
+
+  .over-under-row {
+    display: block;
+  }
+}
+
+
+.pre-footer {
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+
+footer.page-footer {
+  margin: 0;
+  position: relative;
+  z-index: 3;
+}
