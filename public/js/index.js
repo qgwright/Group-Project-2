@@ -109,15 +109,26 @@ $exampleText.on("keyup", function() {
   })
   .done(function(response) {
     console.log(response);
-    $exampleList.empty();
+    // $exampleList.empty();
+    // for(var i = 0; i < response.length; i++) {
+    //   var food = response[i];
+    //   $exampleList.append("<p class=\"food\" data-name=" + food.food_name + "\">" + food.food_name + "</p>");
+    //   $exampleList.append("<img src=\"" + food.photo.thumb + "\" width=100 height=100>");
+    // }
+
+    var foodSource = [];
     for(var i = 0; i < response.length; i++) {
-      var food = response[i];
-      $exampleList.append("<p class=\"food\" data-name=" + food.food_name + "\">" + food.food_name + "</p>");
-      $exampleList.append("<img src=\"" + food.photo.thumb + "\" width=100 height=100>");
+      foodSource.push(response[i].food_name);
     }
+
+    $("#example-text").autocomplete({
+      source: foodSource
+    });
+
   });
 
 });
+
 
 // $(document).on("click", "p.food", function() {
 //   var food = $(this).attr("data-name");
@@ -142,4 +153,4 @@ $exampleText.on("keyup", function() {
 //     console.log(response.foods[0]);
 //     $("[data-name='" + food + "']").append("<p> (" + response.foods[0].nf_calories + " cal) </p>");
 //   });
-});
+// });

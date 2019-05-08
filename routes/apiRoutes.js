@@ -36,7 +36,6 @@ module.exports = function (app) {
     }
 
     axios.get(queryURL, settings).then(function(response) {
-      console.log(response.data.common);
       res.json(response.data.common);
     });
 
