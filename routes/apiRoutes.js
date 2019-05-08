@@ -33,3 +33,28 @@ app.post("/allocation/submit", function(req, res){
   var submit = req.body.button;
   });
 };
+
+app.post("/api/home/submit", function(req, res) {
+  console.log(req.body.button);
+  db.Post.create({
+    title: req.body.title,
+    body: req.body.body,
+    category: req.body.category
+  })
+    .then(function(dbPost) {
+      res.json(dbPost);
+    });
+});
+
+
+app.post("/api/meal/submit", function(req, res) {
+  console.log(req.body);
+  db.Post.create({
+    title: req.body.title,
+    body: req.body.body,
+    category: req.body.category
+  })
+    .then(function(dbPost) {
+      res.json(dbPost);
+    });
+});
