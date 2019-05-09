@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-
-    "database": "exampledb",
+    "password": "root",
+    "database": "callo",
     "host": "127.0.0.1",
     "port": 3306,
     "dialect": "mysql"
