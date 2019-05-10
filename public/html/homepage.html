@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Home Page</title>
+
+	<!--Font Awesome CDN-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</head>
+<style>
+	body {
+		font-family: sans-serif;
+	}
+
+	#header {
+		background: #ff712c;
+		color: #ffffff;
+		text-align: center;
+		margin-top: 15px;
+
+	}
+
+	#meals-form {
+		min-height: 54px;
+	}
+
+	#button{
+		margin-left: 10px;
+		background: #ff712c;
+	}
+
+	#h3{
+		color: #695d46;
+	}
+</style>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col s12" id="header">
+				<h1 class="thin-text valign">CALLO</h1>
+			</div>
+			<div class="col s12 l9">
+				<h3 id="h3">How To: Using Callo to Manage Your Caloric Intake</h3>
+				<p>First off, we'll need a little bit of info. Use the forms below and let us know how many 
+					calories you're looking to consume in a day, and in how many meals.</p>
+			</div>
+
+			<div class="input-field col s12">
+				<input placeholder="ex: 1700/day" id="calories" type="text" class="validate">
+				<label for="calories">Max Calories</label>
+			</div>
+
+			<div class="input-field col s12">
+				<select multiple>
+					<option value="" disabled selected>Meals per Day</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+				</select>
+				<label>Select Quantity of Meals</label>
+			</div>
+		</div>
+
+		<button class="btn waves-effect waves-light" type="submit" name="action" id="button">Submit
+			<i class="material-icons right">send</i>
+		</button>
+	</div>
+	<br><br>
+
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script>
+
+		$(document).ready(function () {
+			$('select').formSelect();
+		});
+
+
+	</script>
+
+
+</body>
+
+</html>
