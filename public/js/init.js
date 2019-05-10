@@ -1,8 +1,59 @@
-////////////////////////////////////////////////////////////////
-// Richard's STUFF
-////////////////////////////////////////////////////////////////
+// Home page range-slider 
 
-/// Desktop Sidebar
+$(document).ready(function() {
+
+  function updateCalorieTotal() {
+
+    $("#range-slide-calories").on("click", function() {
+
+      var calorieTotal = $(this.value);
+
+      $("#total-calories-day").val(calorieTotal.selector);
+      
+    });
+
+  }
+
+  updateCalorieTotal(); 
+
+});
+
+// Home page meal-slider 
+
+$(document).ready(function() {
+
+  function updateMealTotal() {
+
+    $("#range-slide-meals").on("click", function() {
+
+      var mealTotal = $(this.value);
+
+      $("#total-meals-day").val(mealTotal.selector);
+      
+    });
+
+  }
+
+  updateMealTotal(); 
+
+});
+
+
+////////////////////////////////////
+/// Home Page Submit Button
+////////////////////////////////////
+
+$(document).ready(function () {
+
+  $('select').formSelect();
+  
+});
+
+////////////////////////////////////
+
+
+
+/// Meal Page Desktop Sidebar
 
 $(document).ready(function() {
 
@@ -18,9 +69,9 @@ $(document).ready(function() {
 
     $("#food-1, #food-2, #food-3").keypress(function() {
       
-      var food1Total = $("#food-1").val() *1;
+      var food1Total = $("#food-1").val() * 1;
       var food2Total = $("#food-2").val() * 1;
-      var food3Total = $("#food-3").val() *1;
+      var food3Total = $("#food-3").val() * 1;
 
       var foods = food1Total + food2Total + food3Total;
 
@@ -44,7 +95,7 @@ $(document).ready(function() {
 
 });
 
-/// Mobile Row
+/// Meal Page Mobile Row
 
 $(document).ready(function() {
 

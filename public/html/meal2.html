@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Parallax Template - Materialize</title>
+    <meta charset="utf-8">
+
+    <!-- CSS  -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT|Ubuntu" rel="stylesheet">
+    <link href="styles/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="styles/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+</head>
+
+<body>
+
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="/"><img src="../images/CALLO-Logo-nav.png" alt="CALLO Logo"></a>
+
+            <ul class="right hide-on-med-and-down">
+                <li><a href="/meal1">Meal 1</a></li>
+                <li class="active"><a  href="/meal2">Meal 2</a></li>
+                <li><a href="/meal3">Meal 3</a></li>
+                <li><a href="/meal4">Meal 4</a></li>
+                <li><a href="/meal5">Meal 5</a></li>
+                <li><a href="/meal6">Meal 6</a></li>
+            </ul>
+
+            <ul id="nav-mobile" class="sidenav">
+                <li><a href="/meal1">Meal 1</a></li>
+                <li class="active"><a href="/meal2">Meal 2</a></li>
+                <li><a href="/meal3">Meal 3</a></li>
+                <li><a href="/meal4">Meal 4</a></li>
+                <li><a href="/meal5">Meal 5</a></li>
+                <li><a href="/meal6">Meal 6</a></li>
+            </ul>
+
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+
+    <div class="container main">
+
+        <div class="section">
+            <div class="row top-section-meal" style="text-align: center;">
+                <h1 class="header center text-lighten-2" style="font-weight: bold; font-size: 80px;">Meal 2</h1>
+            </div>
+
+            <!--   Sidebar   -->
+
+            <div class="col s12 m4">
+                <div class="sidebar">
+                    <br>
+                    <h5 style="text-align: center;">Total calories for this meal:</h5>
+                    <div class="input-field col s12 m12">
+                        <input value="" id="total-calories-meal" type="number" class="validate">
+                    </div>
+                    <div class="row ">
+                        <div class="input-field col s6 m6">
+                            <h6 style="text-align: center;">Calories From Selected Foods</h6>
+                            <br>
+                            <input value="" id="current-meal" type="number" class="validate">
+                        </div>
+                        <div class="input-field col s6 m6">
+                            <h6 style="text-align: center;">Calories <br>Over / Under</h6>
+                            <br>
+                            <input value="" id="over-under" type="number" class="validate">
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+
+            <div class="row bottom-section-meal">
+
+                <!-- Range Slider -->
+
+                <div class="row">
+                    <div>
+                        <div class="col s12 m12">
+                            <h5 style="text-align: center;">How many calories would you like to allocate for this meal?
+                            </h5>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col s12 m12">
+                        <br>
+                        <form action="#">
+                            <p class="range-field">
+                                <input type="range" id="range-slide" min="0" max="800" />
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row bottom-section-meal">
+
+                <!--   Header Section   -->
+
+                <div class="row">
+
+                    <div>
+                        <div class="col s12 m12">
+                            <br><br>
+                            <hr>
+                            <br><br>
+                            <h5 style="text-align: center;">What foods would you like for this meal?</h5>
+                            <br><br>
+                            <hr>
+                            <br><br>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row bottom-section-meal">
+
+                <!--   Food 1  -->
+
+                <div class="row">
+                    <div class="col s12 m12">
+                        <div class="row">
+                            <h4 style="text-align: center;">Food 1</h4>
+                            <div class="input-field col s12 m10">
+                                <i class="material-icons prefix">textsms</i>
+                                <input type="text" id="autocomplete-input" class="autocomplete">
+                                <label for="autocomplete-input">Autocomplete</label>
+                            </div>
+                            <div class="input-field col s12 m2">
+                                <input style="text-align: center;" value="" id="food-1" type="number" class="validate">
+                                <label style="text-align: center;" class="active" for="food-1">Calories:</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m12">
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <div class="icon-block">
+                                    <p class="center">Nutrition Info Goes Here<p>
+                                            <div style="text-align: center;">
+                                                <img src="https://via.placeholder.com/200x200">
+                                            </div>
+                                </div>
+                            </div>
+                            <div class="col s12 m6">
+                                <div class="icon-block">
+                                    <p class="center">Food Pic Goes Here</p>
+                                    <div style="text-align: center;">
+                                        <img src="https://via.placeholder.com/200x200">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+            </div>
+
+            <div class="row bottom-section-meal">
+
+                <!--   Food 2  -->
+
+                <div class="row">
+                    <div class="col s12 m12">
+                        <div class="row">
+                            <h4 style="text-align: center;">Food 2</h4>
+                            <div class="input-field col s12 m10">
+                                <i class="material-icons prefix">textsms</i>
+                                <input type="text" id="autocomplete-input" class="autocomplete">
+                                <label for="autocomplete-input">Autocomplete</label>
+                            </div>
+                            <div class="input-field col s12 m2">
+                                <input style="text-align: center;" value="" id="food-2" type="number" class="validate">
+                                <label style="text-align: center;" class="active" for="food-2">Calories:</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m12">
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <div class="icon-block">
+                                    <p class="center">Nutrition Info Goes Here<p>
+                                            <div style="text-align: center;">
+                                                <img src="https://via.placeholder.com/200x200">
+                                            </div>
+                                </div>
+                            </div>
+                            <div class="col s12 m6">
+                                <div class="icon-block">
+                                    <p class="center">Food Pic Goes Here</p>
+                                    <div style="text-align: center;">
+                                        <img src="https://via.placeholder.com/200x200">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+            </div>
+
+            <div class="row bottom-section-meal">
+
+                <!--   Food 3  -->
+
+                <div class="row">
+                    <div class="col s12 m12">
+                        <div class="row">
+                            <h4 style="text-align: center;">Food 3</h4>
+                            <div class="input-field col s12 m10">
+                                <i class="material-icons prefix">textsms</i>
+                                <input type="text" id="autocomplete-input" class="autocomplete">
+                                <label for="autocomplete-input">Autocomplete</label>
+                            </div>
+                            <div class="input-field col s12 m2">
+                                <input style="text-align: center;" value="" id="food-3" type="number" class="validate">
+                                <label style="text-align: center;" class="active" for="food-3">Calories:</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m12">
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <div class="icon-block">
+                                    <p class="center">Nutrition Info Goes Here<p>
+                                            <div style="text-align: center;">
+                                                <img src="https://via.placeholder.com/200x200">
+                                            </div>
+                                </div>
+                            </div>
+                            <div class="col s12 m6">
+                                <div class="icon-block">
+                                    <p class="center">Food Pic Goes Here</p>
+                                    <div style="text-align: center;">
+                                        <img src="https://via.placeholder.com/200x200">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+            </div>
+        </div>
+    </div>
+
+    <!-- over/under row -->
+
+    <div class="row over-under-row" style="background: #000;">
+        <div class="container">
+            <div class="col s12 m12 mobile-over-under">
+                <br>
+                <h5 style="text-align: center;">Total calories for this meal:</h5>
+                <div class="input-field col s12 m12">
+                    <input style="color: #fff; text-align: center;" value="" id="total-calories-meal-mobile"
+                        type="number" class="validate">
+                </div>
+                <div class="row ">
+                    <div class="input-field col s6 m6">
+                        <h6 style="text-align: center;">Calories From <br>Selected Foods</h6>
+                        <br>
+                        <input style="color: #fff; text-align: center;" value="" id="current-meal-mobile" type="number"
+                            class="validate">
+                    </div>
+                    <div class="input-field col s6 m6">
+                        <h6 style="text-align: center;">Calories <br>Over / Under</h6>
+                        <br>
+                        <input style="color: #fff; text-align: center;" value="" id="over-under-mobile" type="number"
+                            class="validate">
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+
+    <footer class="page-footer">
+
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class>About CALLO</h5>
+                    <p>CALLO simplifies calorie allocation and meal selection for the tech savvy,
+                        calorie conscientious consumer. We don’t tell you what to eat or how much to eat. We’re here to
+                        help you
+                        make
+                        wholesome choices and support you as you make wise nutrition decisions.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5>Breakout Group 1 Members</h5>
+                    <ul>
+                        <li><a class="footer-link" href="https://github.com/ktrinh93"><i class="fab fa-github"></i>
+                                Kevin
+                                Trihn</a></li>
+                        <li><a class="footer-link" href="https://github.com/qgwright/"><i class="fab fa-github"></i>
+                                Quentin Wright</a></li>
+                        <li><a class="footer-link" href="https://github.com/rpasqualone7"><i class="fab fa-github"></i>
+                                Rich Pasqualone</a></li>
+                        <li><a class="footer-link" href="https://github.com/swissfink"><i class="fab fa-github"></i>
+                                Richard Fink</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <div class="container">
+                © 2019 Copyright Breakout Group 1
+            </div>
+        </div>
+
+    </footer>
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+
+</body>
+
+</html>
