@@ -1,11 +1,10 @@
 var db = require("../models");
 var axios = require("axios");
 
-
 module.exports = function (app) {
 
   app.post("/api/homepage/submit", function (req, res) {
-    db.Post.create({
+    db.Meal.create({
       callo: req.body.callo,
       numMeals: req.body.numMeals
     })
