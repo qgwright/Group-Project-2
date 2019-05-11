@@ -28,16 +28,31 @@ module.exports = function (app) {
     axios.get(queryURL, settings).then(function (response) {
       res.json(response.data.common);
     });
+  });
 
-    // $.ajax(settings).done(function (response) {
-    //   console.log(response);
-    //   $exampleList.empty();
-    //   for (var i = 0; i < response.common.length; i++) {
-    //     var food = response.common[i];
-    //     $exampleList.append("<p class=\"food\" data-name=" + food.food_name + "\">" + food.food_name + "</p>");
-    //     $exampleList.append("<img src=\"" + food.photo.thumb + "\" width=100 height=100>");
-    //   }
-    // });
+  app.post("/api/nutrients", function (req, res) {
+
+    var userInput = req.body.food.trim();
+    var queryURL = "https://trackapi.nutritionix.com/v2/natural/nutrients";
+
+    var config = {
+      headers: {
+        "x-app-id": process.env.APP_ID,
+        "x-app-key": process.env.APP_KEY,
+        "x-remote-user-id": "0",
+        "Content-Type": "application/json"
+      }
+    }
+
+    var data = JSON.stringify({
+      query: userInput,
+      num_servings: 1,
+      locale: "en_US"
+    });
+
+    axios.post(queryURL, data, config).then(function (response) {
+      res.json(response.data.foods);
+    });
   });
 }
 

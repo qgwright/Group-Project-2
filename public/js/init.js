@@ -1,40 +1,40 @@
 // Home page range-slider 
 
-$(document).ready(function() {
+$(document).ready(function () {
 
   function updateCalorieTotal() {
 
-    $("#range-slide-calories").on("click", function() {
+    $("#range-slide-calories").on("click", function () {
 
       var calorieTotal = $(this.value);
 
       $("#total-calories-day").val(calorieTotal.selector);
-      
+
     });
 
   }
 
-  updateCalorieTotal(); 
+  updateCalorieTotal();
 
 });
 
 // Home page meal-slider 
 
-$(document).ready(function() {
+$(document).ready(function () {
 
   function updateMealTotal() {
 
-    $("#range-slide-meals").on("click", function() {
+    $("#range-slide-meals").on("click", function () {
 
       var mealTotal = $(this.value);
 
       $("#total-meals-day").val(mealTotal.selector);
-      
+
     });
 
   }
 
-  updateMealTotal(); 
+  updateMealTotal();
 
 });
 
@@ -46,7 +46,7 @@ $(document).ready(function() {
 $(document).ready(function () {
 
   $('select').formSelect();
-  
+
 });
 
 ////////////////////////////////////
@@ -67,8 +67,8 @@ $(document).ready(function () {
 
     });
 
-    $("#food-1, #food-2, #food-3").keypress(function() {
-      
+    $("#food-1, #food-2, #food-3").keypress(function () {
+
       var food1Total = $("#food-1").val() * 1;
       var food2Total = $("#food-2").val() * 1;
       var food3Total = $("#food-3").val() * 1;
@@ -93,7 +93,7 @@ $(document).ready(function () {
   updateTotal();
 
 
-  $("#submit-button").on("click", function() {
+  $("#submit-button").on("click", function () {
     var cals = parseInt($("#total-calories-day").val().trim());
     var meals = parseInt($("#total-meals-day").val());
 
@@ -104,18 +104,20 @@ $(document).ready(function () {
         callo: cals,
         numMeals: meals
       }
-    }).done(function(data) {
+    }).done(function (data) {
       console.log(data);
     });
 
   });
 
+  var autocompleteNumber;
+
   // Kevin's stuff
-  $("#autocomplete-input-1").on("keyup", function () {
+  $("#autocomplete-input-1, #autocomplete-input-2, #autocomplete-input-3").on("keyup", function () {
 
     var self = $(this);
-    console.log(self.val().trim());
-    
+    autocompleteNumber = self[0].id.charAt(self[0].id.length - 1);
+
     $.ajax({
       url: "api/autocomplete",
       type: "POST",
@@ -123,48 +125,71 @@ $(document).ready(function () {
         food: $(this).val().trim()
       }
     })
-    .done(function(response) {
+      .done(function (response) {
 
-      var foodSource = [];
-      for(var i = 0; i < response.length; i++) {
-        foodSource.push(response[i].food_name);
-      }
+        var foodSource = {};
+        for (var i = 0; i < response.length; i++) {
+          foodSource[response[i].food_name] = response[i].photo.thumb;
+        }
 
-      console.log(foodSource);
+        self.autocomplete({
+          data: foodSource
+        });
 
-      self.autocomplete({
-        source: foodSource
       });
-  
-    });
   });
 
-  // $(document).on("click", "p.food", function() {
-  //   var food = $(this).attr("data-name");
-  //   var settings = {
-  //     "async": true,
-  //     "url": "https://trackapi.nutritionix.com/v2/natural/nutrients",
-  //     "method": "POST",
-  //     "headers": {
-  //       "x-app-id": process.env.APP_ID,
-  //       "x-app-key": process.env.APP_KEY,
-  //       "x-remote-user-id": "0",
-  //       "Content-Type": "application/json"
-  //     },
-  //     "data": JSON.stringify({
-  //       query: food,
-  //       num_servings: 1,
-  //       locale: "en_US"
-  //     })
-  //   }
+  $(document).on("click", "span.highlight", function () {
+    var self = $(this);
 
-  //   $.ajax(settings).done(function (response) {
-  //     console.log(response.foods[0]);
-  //     $("[data-name='" + food + "']").append("<p> (" + response.foods[0].nf_calories + " cal) </p>");
-  //   });
-  // });
+    var food = self.text();
+
+    $.ajax({
+      url: "api/nutrients",
+      type: "POST",
+      data: {
+        food: food
+      }
+    })
+      .done(function (response) {
+
+        var food = response[0];
+        console.log(food);
+        var cals = Math.round(food.nf_calories);
+        var chol = Math.round(food.nf_cholesterol);
+        var satfats = Math.round(food.nf_saturated_fat);
+        var protein = Math.round(food.nf_protein);
+        var fiber = Math.round(food.nf_dietary_fiber);
+        var photo = food.photo.highres;
+
+        $("#food-" + autocompleteNumber).val(cals);
+        $("#food-" + autocompleteNumber + "-cals").text(cals);
+        $("#food-" + autocompleteNumber + "-chol").text(chol);
+        $("#food-" + autocompleteNumber + "-sf").text(satfats);
+        $("#food-" + autocompleteNumber + "-pro").text(protein);
+        $("#food-" + autocompleteNumber + "-fib").text(fiber);
+
+        var picSelector = "img[id='food-pic-" + autocompleteNumber + "']";
+        $(picSelector)[0].src = photo;
+
+      });
+
+  });
+
+  
+  $(".autocomplete").change(function () {
+    console.log("changed");
+    console.log($("#food-1-cals").text());
+    console.log($("#food-2-cals").text());
+    console.log($("#food-3-cals").text());
+    var totalCals = parseInt($("#food-1-cals").text()) + parseInt($("#food-2-cals").text()) + parseInt($("#food-3-cals").text());
+    console.log(totalCals);
+    console.log($("#current-meal"));
+  });
 
 });
+
+var f = 
 
 /// Meal Page Mobile Row
 
