@@ -2,7 +2,7 @@
 
 A calorie allocation app that uses MySQL, Node, Express, Sequelize, and Heroku.
 
-![Image of CALLO App Landing Page](https://github.com/swissfink/burger/blob/master/README%20Images/burger%20app%20pic.png)
+![Image of CALLO App Landing Page](https://github.com/qgwright/Group-Project-2/blob/master/public/images/callo-homepage.png)
 
 
 ## How it works
@@ -12,13 +12,6 @@ A calorie allocation app that uses MySQL, Node, Express, Sequelize, and Heroku.
 * CALLO will do a quick calculation and divvy up the number calories among the number of meal chose. Users can then navigate to each meal and pick which foods they'd like to have.
 
 * CALLO will help the user find foods that they want to eat while staying within the calorie limit they have set.
-
-
-## Example
-
-* After a user sets their number of calories for the day and the number of meals they want, they can go into each meal and pick foods that are within their caloric limit.
-
-![GIF of CALLO App being used](https://github.com/swissfink/burger/blob/master/README%20Images/burger_app.gif) 
 
 
 ---
