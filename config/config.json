@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
+    "password": "pUr5HLeFkp5E3Yk",
     "database": "callo",
     "host": "127.0.0.1",
     "port": 3306,
@@ -17,10 +17,10 @@
   },
   "production": {
     "use_env_variable": "JAWSDB_URL",
-    "username": "g8cfvvpe77m1xuyj",
-    "password": "kyg7cf1c54vhv889",
-    "port": "3306",
-    "database": "ajsaa6ha5jqxmh74",
+    "username": "dvn04xm7cc9itzq2",
+    "password": "ngji2rovajavd6ta",
+    "port": 3306,
+    "database": "o0pa2gmpv22lvgkg",
     "host": "fugfonv8odxxolj8.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
