@@ -8,12 +8,16 @@
   <title>Parallax Template - Materialize</title>
   <meta charset="utf-8">
   
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
   <!-- CSS  -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT|Ubuntu" rel="stylesheet">
-  <link href="styles/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
   <link href="styles/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
 </head>
@@ -79,7 +83,7 @@
         </div>
       </div>
 
-      <div class="row bottom-section-meal">
+      <div class="row bottom-section-meal" style="display: none">
 
         <!-- Range Slider -->
         
@@ -131,9 +135,9 @@
           <div class="col s12 m12">
             <div class="row">
               <h4 style="text-align: center;">Food 1</h4>
-              <div class="input-field col s12 m10">
+              <div class="input-field col s12 m10 input-field">
                 <i class="material-icons prefix">textsms</i>
-                <input type="text" id="autocomplete-input" class="autocomplete">
+                <input type="text" id="autocomplete-input-1" class="autocomplete">
                 <label for="autocomplete-input">Autocomplete</label>
               </div>
               <div class="input-field col s12 m2">
@@ -176,7 +180,7 @@
               <h4 style="text-align: center;">Food 2</h4>
               <div class="input-field col s12 m10">
                 <i class="material-icons prefix">textsms</i>
-                <input type="text" id="autocomplete-input" class="autocomplete">
+                <input type="text" id="autocomplete-input-2" class="autocomplete">
                 <label for="autocomplete-input">Autocomplete</label>
               </div>
               <div class="input-field col s12 m2">
@@ -219,7 +223,7 @@
               <h4 style="text-align: center;">Food 3</h4>
               <div class="input-field col s12 m10">
                 <i class="material-icons prefix">textsms</i>
-                <input type="text" id="autocomplete-input" class="autocomplete">
+                <input type="text" id="autocomplete-input-3" class="autocomplete">
                 <label for="autocomplete-input">Autocomplete</label>
               </div>
               <div class="input-field col s12 m2">
@@ -298,7 +302,7 @@
         <h5>Breakout Group 1 Members</h5>
         <ul>
           <li><a class="footer-link" href="https://github.com/ktrinh93"><i class="fab fa-github"></i>
-            Kevin Trihn</a></li>
+            Kevin Trinh</a></li>
           <li><a class="footer-link" href="https://github.com/qgwright/"><i class="fab fa-github"></i>
             Quentin Wright</a></li>
           <li><a class="footer-link" href="https://github.com/rpasqualone7"><i class="fab fa-github"></i>
@@ -319,8 +323,8 @@
     </footer>
   
     <!--  Scripts-->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="js/materialize.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
     <script src="js/init.js"></script>
   
   </body>

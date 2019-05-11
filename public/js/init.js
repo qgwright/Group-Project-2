@@ -94,8 +94,8 @@ $(document).ready(function () {
 
 
   $("#submit-button").on("click", function() {
-    var cals = parseInt($("#calories").val().trim());
-    var meals = parseInt($("#numMeals").val());
+    var cals = parseInt($("#total-calories-day").val().trim());
+    var meals = parseInt($("#total-meals-day").val());
 
     $.ajax({
       url: "api/homepage/submit",
@@ -105,16 +105,17 @@ $(document).ready(function () {
         numMeals: meals
       }
     }).done(function(data) {
-
+      console.log(data);
     });
 
   });
 
   // Kevin's stuff
-  $(".autocomplete").on("keyup", function () {
+  $("#autocomplete-input-1").on("keyup", function () {
 
-    console.log($(this).val().trim());
-    /*
+    var self = $(this);
+    console.log(self.val().trim());
+    
     $.ajax({
       url: "api/autocomplete",
       type: "POST",
@@ -123,26 +124,19 @@ $(document).ready(function () {
       }
     })
     .done(function(response) {
-      console.log(response);
-      // $exampleList.empty();
-      // for(var i = 0; i < response.length; i++) {
-      //   var food = response[i];
-      //   $exampleList.append("<p class=\"food\" data-name=" + food.food_name + "\">" + food.food_name + "</p>");
-      //   $exampleList.append("<img src=\"" + food.photo.thumb + "\" width=100 height=100>");
-      // }
-  
+
       var foodSource = [];
       for(var i = 0; i < response.length; i++) {
         foodSource.push(response[i].food_name);
       }
-  
-      $(this).autocomplete({
+
+      console.log(foodSource);
+
+      self.autocomplete({
         source: foodSource
       });
   
     });
-    */
-
   });
 
   // $(document).on("click", "p.food", function() {
@@ -237,17 +231,5 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('select').formSelect();
-});
-
-// Or with jQuery
-
-$(document).ready(function () {
-  $('input.autocomplete').autocomplete({
-    data: {
-      "Apple": null,
-      "Microsoft": null,
-      "Google": 'https://placehold.it/250x250'
-    },
-  });
 });
 
