@@ -18,7 +18,7 @@ A calorie allocation app that uses MySQL, Node, Express, Sequelize, and Heroku.
 
 # Check it out yourself!
 
-[Click here to go to the CALLO App... :arrow_upper_right:](#) 
+[Click here to go to the CALLO App... :arrow_upper_right:](https://safe-escarpment-66983.herokuapp.com/) 
 
 ---
 
