@@ -1,11 +1,11 @@
 {
   "development": {
     "username": "root",
-    "password": "pUr5HLeFkp5E3Yk",
+    "password": "root",
     "database": "callo",
     "host": "127.0.0.1",
-    "dialect": "mysql",
-    "port": 3306
+    "port": 3306,
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",

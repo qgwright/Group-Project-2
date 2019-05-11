@@ -165,6 +165,9 @@ input[type=range] + .thumb.active .value {
   box-shadow: 1px 2px 4px rgba(77, 74, 74, 0.6);
 }
 
+.ui-autocomplete {
+  z-index: 100;
+}
 
 #total-calories-meal {
   font-size: 40px;
